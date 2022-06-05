@@ -13,11 +13,12 @@ import com.example.mvvmarch.data.product.remote.dto.ProductUpdateRequest
 import com.example.mvvmarch.databinding.FragmentMainDetailBinding
 import com.example.mvvmarch.domain.product.entity.ProductEntity
 import com.example.mvvmarch.presentation.common.extensions.toast
+import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
-@HiltAndroidApp
+@AndroidEntryPoint
 class DetailMainFragment : Fragment(R.layout.fragment_main_detail) {
 
     private var _binding: FragmentMainDetailBinding? = null

@@ -30,14 +30,11 @@ class HomeMainFragment : Fragment(R.layout.fragment_main_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMainHomeBinding.bind(view)
-        initViews()
-    }
-
-    private fun initViews() {
         setUpRv()
         observerState()
         observeProducts()
         viewModel.fetchAllMyProducts()
+        create()
     }
 
     private fun setUpRv() = binding.productsRecyclerView.apply {
@@ -47,6 +44,12 @@ class HomeMainFragment : Fragment(R.layout.fragment_main_home) {
 
         rvAdapter.onItemClickListener = {
             navigateToDetail(it)
+        }
+    }
+
+    private fun create() {
+        binding.createFab.setOnClickListener {
+            findNavController().navigate(R.id.action_home_to_create)
         }
     }
 
